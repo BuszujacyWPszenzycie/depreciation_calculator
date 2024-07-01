@@ -1,0 +1,113 @@
+@use 'colors' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Jura', sans-serif;
+	font-size: 1rem;
+}
+
+.main {
+	display: flex;
+}
+
+.nav {
+	position: relative;
+	width: 30vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: $navy;
+	&__itemWrapper {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 2rem;
+		color: $white;
+	}
+
+	&__buttonWrapper {
+		display: flex;
+		justify-content: flex-end;
+		padding: 2rem;
+	}
+
+	&__label {
+		font-size: 2rem;
+	}
+
+	&__input {
+		width: 250px;
+		height: 40px;
+		padding: 1rem;
+		font-size: 1.5rem;
+		background-color: $gray;
+		transition: background-color 0.4s;
+		border: none;
+
+		&:focus {
+			outline: none;
+			background-color: $white;
+		}
+	}
+
+	&__button {
+		width: 250px;
+		height: 40px;
+		align-items: flex-end;
+		font-family: inherit;
+		font-size: 2rem;
+		background-color: $gray;
+		cursor: pointer;
+		transition: background-color 0.4s;
+		border: none;
+		&:hover {
+			background-color: $white;
+		}
+		&:focus {
+			outline: none;
+			background-color: $white;
+		}
+	}
+}
+
+// TABLE
+
+.result {
+	&__wrapper {
+		width: 70vw;
+		height: 100vh;
+		padding: 5rem;
+	}
+	&__table {
+		width: 60vw;
+		border-collapse: collapse;
+	}
+
+	&__column {
+		font-size: 2rem;
+		padding: 1.5rem;
+		text-align: left;
+		border-bottom: 1px solid $navy;
+		background-color: $navy;
+		color: $white;
+	}
+
+	&__item {
+		padding: 2rem;
+		font-size: 1.8rem;
+		text-align: left;
+		border-bottom: 1px solid $navy;
+	}
+}

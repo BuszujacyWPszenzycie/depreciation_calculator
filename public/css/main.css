@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Jura", sans-serif;
+  font-size: 1rem;
+}
+
+.main {
+  display: flex;
+}
+
+.nav {
+  position: relative;
+  width: 30vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #03045e;
+}
+.nav__itemWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+  color: #faf9f9;
+}
+.nav__buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+.nav__label {
+  font-size: 2rem;
+}
+.nav__input {
+  width: 250px;
+  height: 40px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: #6c757d;
+  transition: background-color 0.4s;
+  border: none;
+}
+.nav__input:focus {
+  outline: none;
+  background-color: #faf9f9;
+}
+.nav__button {
+  width: 250px;
+  height: 40px;
+  align-items: flex-end;
+  font-family: inherit;
+  font-size: 2rem;
+  background-color: #6c757d;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  border: none;
+}
+.nav__button:hover {
+  background-color: #faf9f9;
+}
+.nav__button:focus {
+  outline: none;
+  background-color: #faf9f9;
+}
+
+.result__wrapper {
+  width: 70vw;
+  height: 100vh;
+  padding: 5rem;
+}
+.result__table {
+  width: 60vw;
+  border-collapse: collapse;
+}
+.result__column {
+  font-size: 2rem;
+  padding: 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid #03045e;
+  background-color: #03045e;
+  color: #faf9f9;
+}
+.result__item {
+  padding: 2rem;
+  font-size: 1.8rem;
+  text-align: left;
+  border-bottom: 1px solid #03045e;
+}/*# sourceMappingURL=main.css.map */

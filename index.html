@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/x-icon" href="/img/favicon_calculator.png">
+  <link rel="stylesheet" href="./public/css/main.css">
+  <title>Kalkulator amortyzacji</title>
+</head>
+
+<body>
+
+  <main class="main">
+    <nav class="nav">
+      <div class="nav__itemWrapper">
+        <label for="initial-value" class="nav__label">Wartość początkowa:</label>
+        <input type="number" name="initial-value" id="initial-value" class="nav__input">
+      </div>
+      <div class="nav__itemWrapper">
+        <label for="admission-date" class="nav__label">Data przyjęcia:</label>
+        <input type="date" name="admission-date" id="admission-date" class="nav__input">
+      </div>
+      <div class="nav__itemWrapper">
+        <label for="initial-value" class="nav__label">Stawka amortyzacji:</label>
+        <input type="number" name="initial-value" id="initial-value" class="nav__input">
+      </div>
+
+      <div class="nav__buttonWrapper">
+        <button class="nav__button">Wylicz</button>
+      </div>
+    </nav>
+
+    <div class="result__wrapper">
+      <table class="result__table">
+        <tr class="result__row">
+          <th class="result__column">L.P.</th>
+          <th class="result__column">Miesiąc</th>
+          <th class="result__column">Rok</th>
+          <th class="result__column">Kwota</th>
+        </tr>
+        <tr class="result__row">
+          <td class="result__item result_lp">1</td>
+          <td class="result__item result__month">Styczeń</td>
+          <td class="result__item result_year">2024</td>
+          <td class="result__item result__amount">50</td>
+        </tr>
+    </div>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
