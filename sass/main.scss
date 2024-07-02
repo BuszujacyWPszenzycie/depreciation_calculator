@@ -20,10 +20,11 @@ body {
 
 .main {
 	display: flex;
+	justify-content: space-between;
 }
 
 .nav {
-	position: relative;
+	position: fixed;
 	width: 30vw;
 	height: 100vh;
 	display: flex;
@@ -55,6 +56,8 @@ body {
 		background-color: $gray;
 		transition: background-color 0.4s;
 		border: none;
+		cursor: pointer;
+		font-family: inherit;
 
 		&:focus {
 			outline: none;
@@ -86,8 +89,14 @@ body {
 
 .result {
 	&__wrapper {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		top: 0;
+		right: 0;
 		width: 70vw;
-		height: 100vh;
+		min-height: 100vh;
 		padding: 5rem;
 	}
 	&__table {
