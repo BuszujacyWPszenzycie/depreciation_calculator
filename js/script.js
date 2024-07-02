@@ -17,15 +17,18 @@ const getNumberOfPeriodsFunction = () => {
 	const initialValue = allInputs[0].value
 	const depreciationRate = allInputs[2].value / 100
 	const depreciationAmount = ((initialValue * depreciationRate) / 12).toFixed(2)
-	const numberOfMonths = (initialValue / depreciationAmount).toFixed(2)
+	const numberOfMonths = parseFloat((initialValue / depreciationAmount).toFixed(2))
 	return numberOfMonths
 }
 
 const createTableElementFunction = () => {
+	const initialValue = parseFloat(allInputs[0].value)
+	let depreciationAmount = parseFloat(getMonthlyRateValueFunction())
 	let lp = 1
 	let initialDate = new Date(allInputs[1].value)
 	let month = parseInt(initialDate.getMonth())
 	let year = initialDate.getFullYear()
+	let cumulativeDepreciation = 0
 	for (let i = 0; i < getNumberOfPeriodsFunction(); i++) {
 		const lastRow = document.createElement('tr')
 		lastRow.classList.add('result__row')
@@ -40,7 +43,7 @@ const createTableElementFunction = () => {
 		tableItemsInLastRow[0].textContent = lp
 		tableItemsInLastRow[1].textContent = month
 		tableItemsInLastRow[2].textContent = year
-		tableItemsInLastRow[3].textContent = getMonthlyRateValueFunction()
+		tableItemsInLastRow[3].textContent = depreciationAmount
 		lp = lp + 1
 		if (month === 12) {
 			month = 1
@@ -48,7 +51,19 @@ const createTableElementFunction = () => {
 		} else {
 			month = month + 1
 		}
+
+		cumulativeDepreciation = cumulativeDepreciation + parseFloat(getMonthlyRateValueFunction())
 	}
+
+	const allTableElements = document.querySelectorAll('.result__item')
+	let lastElement = allTableElements[allTableElements.length - 1]
+	let valueOfLastElement = allTableElements[allTableElements.length - 1].textContent
+	const remaningValue = parseFloat((cumulativeDepreciation - initialValue).toFixed(2))
+	if (remaningValue < valueOfLastElement) {
+		lastElement.textContent = parseFloat((depreciationAmount - remaningValue).toFixed(2))
+	}
+
+	// console.log(allTableElements[allTableElements.length - 1].textContent)
 }
 
 navButton.addEventListener('click', createTableElementFunction)
